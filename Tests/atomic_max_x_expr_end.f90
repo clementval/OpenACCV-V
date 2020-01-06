@@ -27,7 +27,7 @@
           totals_comparison(MOD(x, LOOPCOUNT/10 + 1) + 1) = max(totals_comparison(MOD(x, LOOPCOUNT/10 + 1) + 1), a(x))
         END DO
         DO x = 1, LOOPCOUNT/10 + 1
-          IF (totals_comparison(x) .NE. totals(x)) THEN
+          IF (totals_comparison(x) .NEQV. totals(x)) THEN
             errors = errors + 1
             WRITE(*, *) totals_comparison(x)
           END IF
